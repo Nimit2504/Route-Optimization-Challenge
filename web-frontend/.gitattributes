@@ -1,0 +1,19 @@
+# Set default behavior, in case users don't have core.autocrlf set.
+# This will ensure that all files are normalized to LF in the repository.
+* text=auto eol=lf
+
+# The following files are text files and should be normalized.
+*.js text
+*.jsx text
+*.css text
+*.html text
+*.json text
+*.md text
+*.svg text
+
+# The following files are binary and should not be modified.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

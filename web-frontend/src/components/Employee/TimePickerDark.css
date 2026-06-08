@@ -1,0 +1,66 @@
+/* TimePickerDark.css */
+
+.dark-time-picker-wrapper {
+    width: 100%;
+  }
+  
+  .custom-dark-picker {
+    width: 100%;
+  }
+  
+  .custom-dark-picker .react-time-picker__wrapper {
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: white;
+  }
+  
+  .custom-dark-picker .react-time-picker__inputGroup__input {
+    color: white;
+    background: transparent;
+    outline: none;
+  }
+  
+  .custom-dark-picker .react-time-picker__inputGroup__divider {
+    color: #9ca3af;
+  }
+  
+  .custom-dark-picker .react-time-picker__button {
+    color: #10b981; /* Make the clock icon green */
+    padding: 4px;
+  }
+  
+  .custom-dark-picker .react-time-picker__button:enabled:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-radius: 4px;
+  }
+  
+  /* --- The Popup Clock Styling --- */
+  .react-time-picker__clock {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 12px;
+  }
+  
+  .react-clock__face {
+    border-color: #374151 !important;
+    background-color: #111827;
+  }
+  
+  .react-clock__mark__body, 
+  .react-clock__hand__body {
+    background-color: #e5e7eb !important;
+  }
+  
+  .react-clock__hand__body--hour,
+  .react-clock__hand__body--minute {
+    background-color: #10b981 !important; /* Green hands */
+  }
+  
+  /* Ensure text inside the popup (like AM/PM) is visible */
+  .react-time-picker__clock * {
+    color: #e5e7eb;
+  }

@@ -1,0 +1,348 @@
+/* Full page wrapper with pure dark background */
+.ep-page-wrapper {
+    min-height: 100vh;
+    background-color: #050505; /* Deepest black */
+    position: relative;
+    overflow: hidden; /* Contains the glow */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ffffff;
+  }
+  
+  /* The subtle green radial glow behind the card */
+  .ep-page-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vw;
+    max-width: 800px;
+    max-height: 800px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0) 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* --- Navbar Styles --- */
+  .ep-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: #0a0a0a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .ep-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .ep-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ep-brand-text {
+    font-weight: 600;
+    font-size: 20px; /* Increased from 18px */
+    color: #ffffff;
+  }
+  
+  .ep-nav-item.active {
+    background-color: #1a1a1a; /* Neutral dark gray */
+    color: #e5e5e5;
+    border: 1px solid #2a2a2a; /* subtle border */
+    padding: 8px 18px; /* Slightly more padding for bigger text */
+    border-radius: 8px;
+    font-size: 16px; /* Increased from 14px */
+    font-weight: 500;
+  }
+  
+  .ep-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #9ca3af;
+  }
+  
+  .ep-logout-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    transition: color 0.2s;
+  }
+  
+  .ep-logout-btn:hover {
+    color: #ffffff;
+  }
+  
+  .ep-avatar-small img {
+    width: 36px; /* Slightly bigger navbar avatar */
+    height: 36px;
+    border-radius: 50%;
+  }
+  
+  /* --- Main Content & Layout --- */
+  .ep-main-content {
+    position: relative;
+    z-index: 1; /* Sits above the glow */
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px; /* More top spacing */
+  }
+  
+  .ep-container {
+    width: 100%;
+    max-width: 580px; 
+  }
+  
+  .ep-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #9ca3af;
+    background-color: #050505;
+    font-size: 18px; /* Bigger loading/error text */
+  }
+  
+  /* --- Card & Elements --- */
+  .ep-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent; 
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    margin-bottom: 24px;
+    font-size: 16px; /* Increased from 14px */
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+  
+  .ep-back-button:hover {
+    color: #ffffff;
+  }
+  
+  .ep-card {
+    background-color: #0c0c0c; 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    border-radius: 16px;
+    padding: 48px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); 
+  }
+  
+  .ep-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .ep-avatar {
+    margin-bottom: 16px;
+  }
+  
+  .ep-avatar img {
+    width: 96px; /* Increased from 88px */
+    height: 96px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25); 
+  }
+  
+  .ep-name {
+    margin: 0 0 12px 0;
+    font-size: 32px; /* Increased from 24px */
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .ep-badge {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399; 
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 13px; /* Increased from 11px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .ep-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 36px; /* Increased from 32px to match bigger text */
+  }
+  
+  .ep-info-row {
+    display: flex;
+    align-items: center; /* Changed from flex-start to center for better alignment with bigger text */
+    gap: 24px; /* Increased from 20px */
+  }
+  
+  /* Make the icons slightly bigger to match text */
+  .ep-info-row svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .ep-info-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px; 
+  }
+  
+  .ep-label {
+    font-size: 14px; /* Increased from 12px */
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  .ep-value {
+    font-size: 18px; /* Increased from 16px */
+    color: #f9fafb;
+    font-weight: 500;
+  }
+  
+  .ep-action-btn {
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 24px; /* Slightly bigger padding */
+    border-radius: 8px;
+    color: #e5e5e5;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px; /* Increased from 13px */
+    transition: all 0.2s ease;
+    align-self: center; 
+  }
+  
+  .ep-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  /* --- Edit Form Additions --- */
+.ep-info-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+  }
+  
+  .ep-info-text-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .ep-action-btn-small {
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 14px; 
+    border-radius: 6px;
+    color: #e5e5e5;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px; 
+    transition: all 0.2s ease;
+  }
+  
+  .ep-action-btn-small:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  
+  .ep-edit-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #111;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #222;
+  }
+  
+  .ep-edit-input {
+    background-color: #050505;
+    border: 1px solid #333;
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .ep-edit-input:focus {
+    border-color: #10b981;
+  }
+  
+  .ep-edit-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .ep-edit-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .ep-submit-btn {
+    background-color: #10b981;
+    color: #000000;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .ep-submit-btn:hover:not(:disabled) {
+    background-color: #34d399;
+  }
+  
+  .ep-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .ep-cancel-btn {
+    background-color: transparent;
+    color: #9ca3af;
+    border: 1px solid #333;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .ep-cancel-btn:hover:not(:disabled) {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .ep-cancel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

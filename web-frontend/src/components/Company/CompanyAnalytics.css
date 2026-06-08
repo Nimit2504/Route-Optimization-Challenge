@@ -1,0 +1,479 @@
+.analytics-container {
+    background-color: var(--nav-bg);
+    min-height: 100vh;
+    color: var(--text-white);
+    padding-bottom: 3rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.analytics-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.analytics-header {
+    margin-bottom: 2rem;
+}
+
+.analytics-header h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-white);
+}
+
+.analytics-header p {
+    color: var(--text-muted);
+    margin: 0.5rem 0 0 0;
+}
+
+/* Stats Grid */
+.analytics-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--green-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-accent);
+}
+
+.stat-change {
+    font-size: 0.875rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.stat-change.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-accent);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin: 0;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Vehicle Stats Grid */
+.vehicle-stats-grid {
+    flex: 1 1 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Force 2x2 layout by default */
+    gap: 1.5rem;
+    margin-bottom: 0;
+    align-content: start;
+}
+
+@media (max-width: 640px) {
+    .vehicle-stats-grid {
+        grid-template-columns: 1fr; /* 1x1 on small screens */
+    }
+}
+
+/* Charts Section */
+.analytics-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+.chart-card .recharts-responsive-container {
+    width: 100% !important; /* Ensure it takes full width */
+}
+
+/* Table Section */
+.analytics-table-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.export-btn:hover {
+    border-color: var(--green-accent);
+    color: var(--green-accent);
+}
+
+.table-container {
+    background: var(--card-bg);
+    width: 100%;
+    overflow-x: auto;
+}
+
+.fleet-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.fleet-table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.fleet-table td {
+    padding: 1rem 1.5rem;
+    color: var(--text-white);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.925rem;
+}
+
+.fleet-row {
+    transition: background-color 0.2s;
+}
+
+.fleet-row:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.expand-cell {
+    width: 40px;
+}
+
+.expand-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.expand-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text-white);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-active {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-accent);
+}
+
+.status-maintenance {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.efficiency-text {
+    font-weight: 600;
+}
+
+.efficiency-high { color: var(--green-accent); }
+.efficiency-mid { color: #f59e0b; }
+.efficiency-low { color: #ef4444; }
+
+/* Expanded Content */
+.expanded-row-content {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0;
+}
+
+.trips-detail-container {
+    padding: 1.5rem;
+    border-left: 2px solid var(--green-accent);
+    margin: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 8px 8px 0;
+}
+
+.trips-detail-container h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.trips-table th {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: none;
+}
+
+.trips-table td {
+    background: var(--nav-bg);
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+}
+
+.trips-table td:first-child { border-radius: 6px 0 0 6px; }
+.trips-table td:last-child { border-radius: 0 6px 6px 0; }
+
+@media (max-width: 768px) {
+    .analytics-content {
+        padding: 1rem;
+    }
+
+    .analytics-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trips-detail-container {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Alignment Fixes */
+.fleet-table th:nth-child(n+3),
+.fleet-table td:nth-child(n+3) {
+    text-align: right;
+}
+
+.trips-table th:nth-child(n+2),
+.trips-table td:nth-child(n+2) {
+    text-align: right;
+}
+
+/* =========================================
+   METRIC SECTIONS (Analytics Stats Redesign)
+   ========================================= */
+.metric-section {
+    margin-bottom: 28px;
+}
+
+.metric-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.metric-section-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.metric-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #52525b;
+    white-space: nowrap;
+}
+
+.metric-section-line {
+    flex: 1;
+    height: 1px;
+    background: #1f2937;
+}
+
+.metric-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+}
+
+/* Individual Metric Card */
+.metric-card {
+    background: #0c0c0c;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+}
+
+.metric-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.metric-card-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+.metric-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.metric-card-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.metric-card-value {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+/* ---- Color variants ---- */
+.metric-card.mc-green::before  { background: #10b981; }
+.metric-card.mc-green:hover    { border-color: rgba(16, 185, 129, 0.25); box-shadow: 0 6px 20px rgba(16,185,129,0.07); }
+.metric-card.mc-green .metric-card-icon  { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+.metric-card.mc-green .metric-card-value { color: #10b981; }
+
+.metric-card.mc-blue::before   { background: #3b82f6; }
+.metric-card.mc-blue:hover     { border-color: rgba(59, 130, 246, 0.25); box-shadow: 0 6px 20px rgba(59,130,246,0.07); }
+.metric-card.mc-blue .metric-card-icon   { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+
+.metric-card.mc-purple::before { background: #8b5cf6; }
+.metric-card.mc-purple:hover   { border-color: rgba(139, 92, 246, 0.25); box-shadow: 0 6px 20px rgba(139,92,246,0.07); }
+.metric-card.mc-purple .metric-card-icon { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+
+.metric-card.mc-amber::before  { background: #f59e0b; }
+.metric-card.mc-amber:hover    { border-color: rgba(245, 158, 11, 0.25); box-shadow: 0 6px 20px rgba(245,158,11,0.07); }
+.metric-card.mc-amber .metric-card-icon  { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+.metric-card.mc-amber .metric-card-value { color: #f59e0b; }
+
+@media (max-width: 768px) {
+    .metric-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .metric-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

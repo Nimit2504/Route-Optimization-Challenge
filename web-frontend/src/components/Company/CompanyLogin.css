@@ -1,0 +1,107 @@
+.company-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.company-login-page .login-container {
+  max-width: 450px;
+  width: 100%;
+}
+
+.company-login-page .logo-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.company-login-page .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #10b981;
+  margin-bottom: 10px;
+}
+
+.company-login-page .logo-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.company-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  margin: 0 auto 25px;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.signup-link p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.signup-link a {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.signup-link a:hover {
+  color: #059669;
+}
+
+@media (max-width: 768px) {
+  .company-login-page .login-box {
+    padding: 40px 30px;
+  }
+}
+
+.google-button {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 16px; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background-color 0.2s;
+}
+
+.google-button:hover {
+  background-color: #f3f4f6;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
